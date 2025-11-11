@@ -52,7 +52,7 @@ header{ position: sticky; top:0; z-index: 50; background:var(--bg); color:#fff; 
 .logo{ display:flex; align-items:center; }
 .logo img{ height:32px; width:auto; }
 
-.nav-links{ margin-left:auto; display:flex; gap:1.25rem; list-style:none; }
+.nav-links{ margin-left:auto; display:flex; gap:1.25rem; list-style:none; font-family: 'DRUK', sans-serif;}
 .nav-links a{
   color:#e6e6e6; text-decoration:none; padding:.35rem .6rem; border-radius:.5rem;
 }

@@ -90,12 +90,12 @@ header { background: #111; color: #fff; }
 .visualizer-item {
   flex: 0 0 auto;               /* don't shrink or grow */
   scroll-snap-align: start;
-  width: 800px;                 /* requested size */
+  width: 600px;                 /* requested size */
 }
 
 .visualizer-frame {
-  width: 800px;
-  height: 800px;
+  width: 600px;
+  height: 600px;
   border-radius: .75rem;
   background: #000;             /* nice backdrop for GIFs */
   overflow: hidden;

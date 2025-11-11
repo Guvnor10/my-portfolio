@@ -116,13 +116,6 @@ header { background: #111; color: #fff; }
   text-align: center;
 }
 
-/* Optional: make tiles responsive on small screens */
-@media (max-width: 840px) {
-  .visualizer-item, .visualizer-frame {
-    width: min(800px, 90vw);
-    height: min(800px, 90vw);
-  }
-}
 
 /* ------------------ Footer ------------------ */
 footer {

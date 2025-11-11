@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio | Home</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png"> <!-- FavIcon-->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png"> <!-- FavIcon-->
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png"> <!-- FavIcon-->
+  <link rel="manifest" href="favicon/site.webmanifest"> <!-- FavIcon-->
+  <link rel="stylesheet" href="styles.css" /> 
+</head>
+<body>
+  <!-- Navigation Header -->
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">
+        <a href="index.html">
+          <img src="Pictures/GUV marker.png" alt="Logo">
+        </a>
+      </h1>
+
+      <!-- Hamburger Icon (Visible on Mobile) -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>GUVGFX</h2>
+    <p></p>
+    <a href="projects.html" class="btn">View My Work</a>
+  </section>
+
+  <!-- Optional Featured Work Section -->
+  <section class="content">
+    <h2>FEATURED PROJECTS</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="Pictures/Wildlife Luh Jr.png" alt="Cover Art">
+        <h3>Cover Art</h3>
+      </div>
+      <div class="project-card">
+        <img src="Pictures/DumpYardiganz Thumbnail.png" alt="Thumbnail Art">
+        <h3>Thumbnail Art</h3>
+      </div>
+      <div class="project-card">
+        <img src="Pictures/TDuke Flyer.png" alt="Promotional Flyers">
+        <h3>Promotional Flyers</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 GUVGFX | Designed by Guvnor Nnanna </p>
+  </footer>
+
+  <!-- JavaScript for Hamburger Toggle -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      hamburger.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

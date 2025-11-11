@@ -1,0 +1,114 @@
+/* --- Custom Fonts --- */
+@font-face {
+  font-family: 'DRUK';
+  src: url('Fonts/DRUKWIDEHEAVYTRIAL.OTF') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ------------------ Base / Reset ------------------ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  /* font-family: system-ui, -apple-system, Segoe UI, Druk Roboto, Arial, sans-serif; */
+   font-family: 'DRUK', sans-serif;
+  color: #111;
+  background: #e8ebec; /* This is the color for the background. --> */
+  line-height: 1.6;
+}
+
+/* ------------------ Layout Helpers ------------------ */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
+section { padding: 3rem 0; }
+
+/* ------------------ Navbar ------------------ */
+header { background: #111; color: #fff; }
+.navbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem; max-width: 1100px; margin: 0 auto;
+}
+.logo { font-size: 1.25rem; letter-spacing: .5px; }
+.nav-links { display: flex; gap: 1.25rem; list-style: none; }
+.nav-links a {
+  color: #ddd; text-decoration: none; padding: .25rem .5rem; border-radius: .375rem;
+}
+.nav-links a:hover, .nav-links a.active { color: #fff; background: #222; }
+
+/* ------------------ Hero ------------------ */
+
+.hero {
+  background: url('Pictures/Guv\ Background1.png') no-repeat center center/cover;
+  display: grid; place-items: center;
+  text-align: center; padding: 6rem 1rem;
+  /*
+  background: linear-gradient(135deg, #111 0%, #242424 100%); - This is for a black gradient background. 
+  */
+  color: #fff;
+}
+.hero h2 { font-size: clamp(1.75rem, 2.5vw, 2.5rem); margin-bottom: .75rem; }
+
+.hero h3 { font-size: clamp(1.75rem, 2.5vw, 2.5rem); margin-bottom: .75rem; }
+
+.hero p { color: #d6d6d6; margin-bottom: 1.25rem; }
+.btn {
+  display: inline-block; text-decoration: none; font-weight: 600;
+  padding: .7rem 1rem; border-radius: .6rem; background: #fff; color: #111;
+}
+.btn:hover { opacity: .9; }
+
+/* ------------------ Content / Cards ------------------ */
+.content h2 {
+  font-size: 1.6rem; margin-bottom: 1rem; text-align: center;
+}
+.projects-grid {
+  display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr);
+  max-width: 1100px; margin: 0 auto; padding: 0 1rem;
+}
+.project-card {
+  background: #fff; border: 1px solid #eee; border-radius: .75rem;
+  overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,.04);
+}
+.project-card img { width: 100%; height: 180px; object-fit: cover; display: block; }
+.project-card h3 { padding: .9rem 1rem; }
+
+/* ------------------ Generic Page Content ------------------ */
+.content { max-width: 800px; margin: 0 auto; padding: 0 1rem; }
+.content p { margin-top: .5rem; color: #444; }
+
+
+/* ------------------ Footer ------------------ */
+footer {
+  border-top: 1px solid #eee; padding: 1rem; text-align: center; color: #666;
+  background: #222;
+}
+
+/* ------------------ Hamburger (Desktop hidden) ------------------ */
+.hamburger {
+  display: none;
+  flex-direction: column; justify-content: space-between;
+  width: 28px; height: 20px; cursor: pointer;
+}
+.hamburger span {
+  height: 3px; width: 100%; background-color: #fff; border-radius: 2px; transition: .3s;
+}
+/* Animation when open */
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translateY(8px); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translateY(-8px); }
+
+/* ------------------ Responsive ------------------ */
+@media (max-width: 992px) {
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .nav-links {
+    display: none; flex-direction: column; background: #111;
+    position: absolute; top: 60px; right: 0; width: 100%; padding: 1rem 0;
+    border-top: 1px solid #222;
+  }
+  .nav-links.show { display: flex; }
+  .nav-links li { text-align: center; margin: .5rem 0; }
+  .projects-grid { grid-template-columns: 1fr; }
+}

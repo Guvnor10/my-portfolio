@@ -3,22 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png"> <!-- FavIcon-->
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png"> <!-- FavIcon-->
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png"> <!-- FavIcon-->
-  <link rel="manifest" href="favicon/site.webmanifest"> <!-- FavIcon-->
+  <title>Projects | GUVGFX</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon/favicon-32x32.png" type="image/png" />
 </head>
 <body>
+
+  <!-- ========== HEADER ========== -->
   <header>
     <nav class="navbar">
       <h1 class="logo">
         <a href="index.html">
-          <img src="Pictures/GUV marker.png" alt="Logo">
+          <img src="Pictures/GUV marker.png" alt="GUV Logo">
         </a>
       </h1>
-      <ul class="nav-links">
+
+      <!-- Hamburger (mobile) -->
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="projects.html" class="active">Projects</a></li>
@@ -27,23 +32,69 @@
     </nav>
   </header>
 
-  <section>
-  <h2 class="section-title">Content Design</h2>
+  <!-- ========== MAIN ========== -->
+  <main class="main-wrap">
+    <section>
+      <h2 class="section-title">Content Design</h2>
 
-  <div class="portfolio-grid">
-    <a class="portfolio-item" href="covers.html"><img src="Pictures/Wildlife Luh Jr.png" alt="Digital Cover"></a>
-    <a class="portfolio-item" href="visualizers.html"><img src="Pictures/DumpYardiganz Thumbnail.png" alt="Visualizer"></a>
-    <a class="portfolio-item" href="drawings.html"><img src="Pictures/TDuke Flyer.png" alt="Drawing"></a>
-    <!-- add more items -->
-  </div>
+      <!-- Neon framed grid -->
+      <div class="portfolio-grid">
+        <!-- Covers / Digital Art -->
+        <a class="portfolio-item" href="covers.html" aria-label="View Digital Cover Art">
+          <img src="Pictures/Wildlife Luh Jr.png" alt="Digital Cover sample">
+        </a>
 
-  <p style="text-align:center; margin: 1rem 0 2.5rem;">
-    <a class="btn-lg" href="projects.html">See More Work</a>
-  </p>
-  </section>
+        <!-- Motion / Visualizers -->
+        <a class="portfolio-item" href="visualizers.html" aria-label="View Motion Visualizers">
+          <img src="Pictures/DumpYardiganz Thumbnail.png" alt="Visualizer thumbnail">
+        </a>
 
+        <!-- Cartoons / Drawings -->
+        <a class="portfolio-item" href="drawings.html" aria-label="View Cartoons and Drawings">
+          <img src="Pictures/TDuke Flyer.png" alt="Drawing / Cartoon sample">
+        </a>
+
+        <!-- Add more categories or link to individual project-detail pages -->
+        <!--
+        <a class="portfolio-item" href="project-detail.html">
+          <img src="Pictures/AnotherImage.png" alt="Project detail sample">
+        </a>
+        -->
+      </div>
+
+      <p class="center mt-2">
+        <a class="btn-lg" href="contact.html">Book a Project</a>
+      </p>
+    </section>
+
+    <!-- Optional: a horizontal "Recent Work" strip on the Projects page too -->
+    <!--
+    <section>
+      <h2 class="section-title">Recent Work</h2>
+      <div class="work-strip">
+        <a class="work-card" href="covers.html"><img src="Pictures/COVER ART 1.png" alt="Cover 1"></a>
+        <a class="work-card" href="covers.html"><img src="Pictures/COVER ART 2.png" alt="Cover 2"></a>
+        <a class="work-card" href="covers.html"><img src="Pictures/COVER ART 3.png" alt="Cover 3"></a>
+        <a class="work-card" href="covers.html"><img src="Pictures/COVER ART 4.png" alt="Cover 4"></a>
+      </div>
+    </section>
+    -->
+  </main>
+
+  <!-- ========== FOOTER ========== -->
   <footer>
-    <p>© 2025 My Portfolio</p>
+    <p>© 2025 GUVGFX | Designed by Guvnor Nnanna</p>
   </footer>
+
+  <!-- ========== JS: Hamburger Toggle ========== -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      hamburger.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
+

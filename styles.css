@@ -70,7 +70,10 @@ header{ position: sticky; top:0; z-index: 50; background:var(--bg); color:#fff; 
   display:grid; place-items:center; text-align:center; padding:6rem 1rem;
   background: linear-gradient(135deg,#111 0%, #242424 100%); color:#fff;
 }
-.hero h2{ font-size: clamp(1.9rem, 3vw, 3rem); margin-bottom:.6rem; }
+.hero h2{ 
+  font-family: 'DRUK', sans-serif;
+  font-size: 3rem;
+  letter-spacing: 1px; margin-bottom:.6rem; }
 .hero p{ color:#d6d6d6; margin-bottom:1rem; }
 
 h1, h2, h3, .section-title {

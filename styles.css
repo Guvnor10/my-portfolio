@@ -74,6 +74,7 @@ header{ position: sticky; top:0; z-index: 50; background:var(--bg); color:#fff; 
 .hero h2{ 
   font-family: 'DRUK', sans-serif;
   font-size: 3rem;
+   color: #ffffff;
   letter-spacing: 1px; margin-bottom:.6rem; }
 .hero p{ color:#d6d6d6; margin-bottom:1rem; }
 

@@ -3,82 +3,112 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio | Home</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png"> <!-- FavIcon-->
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png"> <!-- FavIcon-->
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png"> <!-- FavIcon-->
-  <link rel="manifest" href="favicon/site.webmanifest"> <!-- FavIcon-->
-  <link rel="stylesheet" href="styles.css" /> 
+  <title>GUVGFX | Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon/favicon-32x32.png" type="image/png" />
 </head>
 <body>
-  <!-- Navigation Header -->
+
+  <!-- ========== HEADER ========== -->
   <header>
-  <nav class="navbar">
-    <h1 class="logo">
-      <a href="index.html"><img src="Pictures/GUV marker.png" alt="GUV Logo"></a>
-    </h1>
+    <nav class="navbar">
+      <h1 class="logo">
+        <a href="index.html">
+          <img src="Pictures/GUV marker.png" alt="GUV Logo">
+        </a>
+      </h1>
 
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-  </header
+      <!-- Hamburger (mobile) -->
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
 
-  <!-- Hero Section -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ========== HERO SECTION ========== -->
   <section class="hero">
-    <h2>GUVGFX</h2>
-    <p></p>
-    <a href="projects.html" class="btn">View My Work</a>
-  </section>
-
-  <!-- Optional Featured Work Section -->
-  <section class="content">
-    <h2>FEATURED PROJECTS</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <img src="Pictures/Wildlife Luh Jr.png" alt="Cover Art">
-        <h3>Cover Art</h3>
-      </div>
-      <div class="project-card">
-        <img src="Pictures/DumpYardiganz Thumbnail.png" alt="Thumbnail Art">
-        <h3>Thumbnail Art</h3>
-      </div>
-      <div class="project-card">
-        <img src="Pictures/TDuke Flyer.png" alt="Promotional Flyers">
-        <h3>Promotional Flyers</h3>
-      </div>
+    <div>
+      <h2>GUVGFX</h2>
+      <p>Digital designer & visual storyteller — transforming music and media into art.</p>
+      <a href="projects.html" class="btn-lg">View My Work</a>
     </div>
   </section>
 
+  <!-- ========== RECENT WORK (Horizontal Strip) ========== -->
   <div class="main-wrap">
-  <h2 class="section-title">Recent Work</h2>
+    <h2 class="section-title">Recent Work</h2>
 
-  <div class="work-strip">
-    <a class="work-card" href="covers.html"><img src="Pictures/COVER ART 1.png" alt="Cover 1"></a>
-    <a class="work-card" href="covers.html"><img src="Pictures/COVER ART 2.png" alt="Cover 2"></a>
-    <a class="work-card" href="covers.html"><img src="Pictures/COVER ART 3.png" alt="Cover 3"></a>
-    <a class="work-card" href="covers.html"><img src="Pictures/COVER ART 4.png" alt="Cover 4"></a>
-    <!-- add more as needed -->
+    <div class="work-strip">
+      <a class="work-card" href="covers.html">
+        <img src="Pictures/COVER ART 1.png" alt="Cover 1">
+      </a>
+      <a class="work-card" href="covers.html">
+        <img src="Pictures/COVER ART 2.png" alt="Cover 2">
+      </a>
+      <a class="work-card" href="covers.html">
+        <img src="Pictures/COVER ART 3.png" alt="Cover 3">
+      </a>
+      <a class="work-card" href="covers.html">
+        <img src="Pictures/COVER ART 4.png" alt="Cover 4">
+      </a>
+      <a class="work-card" href="covers.html">
+        <img src="Pictures/COVER ART 5.png" alt="Cover 5">
+      </a>
+    </div>
   </div>
-</div>
 
-  <!-- Footer -->
+  <!-- ========== CONTENT GRID (Categories) ========== -->
+  <section>
+    <h2 class="section-title">Content Design</h2>
+
+    <div class="portfolio-grid">
+      <!-- Category 1 -->
+      <a class="portfolio-item" href="covers.html">
+        <img src="Pictures/Wildlife Luh Jr.png" alt="Digital Cover">
+      </a>
+
+      <!-- Category 2 -->
+      <a class="portfolio-item" href="visualizers.html">
+        <img src="Pictures/DumpYardiganz Thumbnail.png" alt="Visualizer">
+      </a>
+
+      <!-- Category 3 -->
+      <a class="portfolio-item" href="drawings.html">
+        <img src="Pictures/TDuke Flyer.png" alt="Drawing / Cartoon">
+      </a>
+
+      <!-- Optional More -->
+      <a class="portfolio-item" href="projects.html">
+        <img src="Pictures/COVER ART 6.png" alt="More Work">
+      </a>
+    </div>
+
+    <p class="center mt-2">
+      <a class="btn-lg" href="projects.html">See More Work</a>
+    </p>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
   <footer>
-    <p>© 2025 GUVGFX | Designed by Guvnor Nnanna </p>
+    <p>© 2025 GUVGFX | Designed by Guvnor Nnanna</p>
   </footer>
 
-  <!-- JavaScript for Hamburger Toggle -->
+  <!-- ========== JS: Hamburger Toggle ========== -->
   <script>
     const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-
+    const navLinks  = document.getElementById('nav-links');
     hamburger.addEventListener('click', () => {
       navLinks.classList.toggle('show');
       hamburger.classList.toggle('open');
     });
   </script>
+
 </body>
 </html>

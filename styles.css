@@ -33,10 +33,9 @@ body{
   /* font-family: DRUK, sans-serif; */
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; 
   font-size: 16px;
-  background: url('Pictures/Guv\ Background1.png') no-repeat center center/cover;
-  /* background-image:
+  background-image:
     radial-gradient(circle at 25% 25%, rgba(0,0,0,.03) 0 40%, transparent 41%),
-    radial-gradient(circle at 75% 75%, rgba(0,0,0,.03) 0 40%, transparent 41%); */
+    radial-gradient(circle at 75% 75%, rgba(0,0,0,.03) 0 40%, transparent 41%); 
   background-size: 40px 40px;
 }
 
@@ -69,7 +68,8 @@ header{ position: sticky; top:0; z-index: 50; background:var(--bg); color:#fff; 
 /* =============== HERO =============== */
 .hero{
   display:grid; place-items:center; text-align:center; padding:6rem 1rem;
-  background: linear-gradient(135deg,#111 0%, #242424 100%); color:#fff;
+  background: url('Pictures/Guv\ Background1.png') no-repeat center center/cover;
+  /* background: linear-gradient(135deg,#111 0%, #242424 100%); color:#fff; */
 }
 .hero h2{ 
   font-family: 'DRUK', sans-serif;
@@ -83,6 +83,7 @@ h1, h2, h3, .section-title {
 
 /* Buttons */
 .btn, .btn-lg{
+  font-family: DRUK, sans-serif; text-align:center;
   display:inline-block; text-decoration:none; font-weight:700; border:none; cursor:pointer;
   padding:.75rem 1rem; border-radius:.6rem; background:#fff; color:#111;
 }

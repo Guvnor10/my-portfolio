@@ -15,7 +15,7 @@ a { color: inherit; }
 /* =============== THEME =============== */
 :root{
   --bg:#111;              /* header */
-  --page:rgb(205, 231, 210);         /* page background */
+  --page:rgb(217, 233, 220);         /* page background */
   --ink:#141414;          /* text */
   --muted:#6a6a6a;
   --primary:#3126cf;      /* neon green */
@@ -106,21 +106,45 @@ h1, h2, h3, .section-title {
 .main-wrap{ border-left:6px solid var(--primary); border-right:6px solid var(--primary); }
 
 /* =============== RECENT WORK STRIP (Horizontal) =============== */
-.work-strip{
-  display:flex; gap:1.25rem; overflow-x:auto; padding:.5rem 1rem 1.25rem;
-  scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
-  scrollbar-width: none;        /* Firefox */
-  -ms-overflow-style: none;     /* Internet Explorer and Edge */
+.work-strip {
+  display: flex;
+  gap: 1.25rem;
+  overflow: hidden;               /* Hides scrollbar */
+  padding: 0.5rem 1rem 1.25rem;
+  scroll-snap-type: x mandatory;
+  animation: scrollWork 30s linear infinite;  /* auto-scroll animation */
 }
-.work-card{
-  flex:0 0 auto; width:360px; height:360px;
-  background:var(--card); border:5px solid var(--primary); border-radius:var(--radius);
-  overflow:hidden; scroll-snap-align:start; box-shadow: var(--shadow-1);
-  transition: transform .18s ease, box-shadow .18s ease; cursor:pointer;
+.work-card {
+  flex: 0 0 auto;
+  width: 360px;
+  height: 360px;
+  background: var(--card);
+  border: 5px solid var(--primary);
+  border-radius: var(--radius);
+  overflow: hidden;
+  scroll-snap-align: start;
+  box-shadow: var(--shadow-1);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  cursor: pointer;
 }
-.work-card:hover{ transform: translateY(-4px); box-shadow: var(--shadow-2); }
-.work-card img{ width:100%; height:100%; object-fit:cover; }
+.work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-2);
+}
+.work-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.work-strip::-webkit-scrollbar { display: none; }
+.work-strip { scrollbar-width: none; -ms-overflow-style: none; }
 a.work-card{ text-decoration:none; color:inherit; }
+
+@keyframes scrollWork {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(-50%); } /* adjust speed/distance */
+  100% { transform: translateX(0); }
+}
 
 /* =============== IMAGE MODAL (For Recent Work) =============== */
 .image-modal {

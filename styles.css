@@ -15,7 +15,7 @@ a { color: inherit; }
 /* =============== THEME =============== */
 :root{
   --bg:#111;              /* header */
-  --page:#6493f1;         /* page background */
+  --page:rgb(205, 231, 210);         /* page background */
   --ink:#141414;          /* text */
   --muted:#6a6a6a;
   --primary:#3126cf;      /* neon green */
@@ -109,6 +109,8 @@ h1, h2, h3, .section-title {
 .work-strip{
   display:flex; gap:1.25rem; overflow-x:auto; padding:.5rem 1rem 1.25rem;
   scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* Internet Explorer and Edge */
 }
 .work-card{
   flex:0 0 auto; width:360px; height:360px;

@@ -15,10 +15,10 @@ a { color: inherit; }
 /* =============== THEME =============== */
 :root{
   --bg:#111;              /* header */
-  --page:#e9eaec;         /* page background */
+  --page:#6493f1;         /* page background */
   --ink:#141414;          /* text */
   --muted:#6a6a6a;
-  --primary:#8aff00;      /* neon green */
+  --primary:#3126cf;      /* neon green */
   --card:#fff;
   --radius:12px;
   --shadow-1:0 2px 0 #0003, 0 8px 18px rgba(0,0,0,.10);

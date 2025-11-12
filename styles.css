@@ -1,5 +1,5 @@
-/* --- Custom Font --- */
-@font-face{
+/* --- Custom Fonts --- */
+@font-face {
   font-family: 'DRUK';
   src: url('Fonts/DRUKWIDEHEAVYTRIAL.OTF') format('opentype');
   font-weight: normal;
@@ -10,7 +10,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; }
 img { max-width: 100%; display: block; }
-a { color: inherit; text-decoration: none; }
+a { color: inherit; }
 
 /* =============== THEME =============== */
 :root{
@@ -30,11 +30,12 @@ body{
   background: var(--page);
   color: var(--ink);
   line-height: 1.6;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  /* font-family: DRUK, sans-serif; */
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; 
   font-size: 16px;
   background-image:
     radial-gradient(circle at 25% 25%, rgba(0,0,0,.03) 0 40%, transparent 41%),
-    radial-gradient(circle at 75% 75%, rgba(0,0,0,.03) 0 40%, transparent 41%);
+    radial-gradient(circle at 75% 75%, rgba(0,0,0,.03) 0 40%, transparent 41%); 
   background-size: 40px 40px;
 }
 
@@ -51,9 +52,9 @@ header{ position: sticky; top:0; z-index: 50; background:var(--bg); color:#fff; 
 .logo{ display:flex; align-items:center; }
 .logo img{ height:32px; width:auto; }
 
-.nav-links{ margin-left:auto; display:flex; gap:1.25rem; list-style:none; font-family:'DRUK', sans-serif; }
+.nav-links{ margin-left:auto; display:flex; gap:1.25rem; list-style:none; font-family: 'DRUK', sans-serif;}
 .nav-links a{
-  color:#e6e6e6; padding:.35rem .6rem; border-radius:.5rem;
+  color:#e6e6e6; text-decoration:none; padding:.35rem .6rem; border-radius:.5rem;
 }
 .nav-links a:hover, .nav-links a.active{ color:#fff; background:#1b1b1b; }
 
@@ -67,24 +68,24 @@ header{ position: sticky; top:0; z-index: 50; background:var(--bg); color:#fff; 
 /* =============== HERO =============== */
 .hero{
   display:grid; place-items:center; text-align:center; padding:6rem 1rem;
-  background: url('Pictures/Guv\\ Background1.png') no-repeat center center/cover;
+  background: url('Pictures/Guv\ Background1.png') no-repeat center center/cover;
+  /* background: linear-gradient(135deg,#111 0%, #242424 100%); color:#fff; */
 }
-.hero h2{
-  font-family:'DRUK', sans-serif;
-  color:#fff;                /* make the title white */
-  font-size:3rem;
-  letter-spacing:1px;
-  margin-bottom:.6rem;
-}
+.hero h2{ 
+  font-family: 'DRUK', sans-serif;
+  font-size: 3rem;
+   color: #ffffff;
+  letter-spacing: 1px; margin-bottom:.6rem; }
 .hero p{ color:#d6d6d6; margin-bottom:1rem; }
 
-/* Heading style for sections (also uses DRUK) */
-h1, h2, h3, .section-title { font-family:'DRUK', sans-serif; }
+h1, h2, h3, .section-title {
+  font-family: 'DRUK', sans-serif;
+}
 
 /* Buttons */
 .btn, .btn-lg{
-  font-family: 'DRUK', sans-serif; text-align:center;
-  display:inline-block; font-weight:700; border:none; cursor:pointer;
+  font-family: DRUK, sans-serif; text-align:center;
+  display:inline-block; text-decoration:none; font-weight:700; border:none; cursor:pointer;
   padding:.75rem 1rem; border-radius:.6rem; background:#fff; color:#111;
 }
 .btn-lg{
@@ -95,6 +96,7 @@ h1, h2, h3, .section-title { font-family:'DRUK', sans-serif; }
 
 /* Section title */
 .section-title{
+  font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
   text-transform: uppercase; letter-spacing:.5px;
   text-align:center; margin:2.2rem 0 1.1rem;
   font-size: clamp(1.8rem, 3.5vw, 3rem);
@@ -102,6 +104,49 @@ h1, h2, h3, .section-title { font-family:'DRUK', sans-serif; }
 
 /* Optional neon rails framing main content */
 .main-wrap{ border-left:6px solid var(--primary); border-right:6px solid var(--primary); }
+
+
+/* =============== IMAGE MODAL (For Recent Work) =============== */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.image-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  animation: zoomIn 0.3s ease;
+}
+
+.image-modal .close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.image-modal .close:hover {
+  color: var(--primary);
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
 
 /* =============== RECENT WORK STRIP (Horizontal) =============== */
 .work-strip{
@@ -116,6 +161,7 @@ h1, h2, h3, .section-title { font-family:'DRUK', sans-serif; }
 }
 .work-card:hover{ transform: translateY(-4px); box-shadow: var(--shadow-2); }
 .work-card img{ width:100%; height:100%; object-fit:cover; }
+a.work-card{ text-decoration:none; color:inherit; }
 
 /* =============== PORTFOLIO GRID (Neon squares) =============== */
 .portfolio-grid{
@@ -127,42 +173,57 @@ h1, h2, h3, .section-title { font-family:'DRUK', sans-serif; }
   overflow:hidden; box-shadow: var(--shadow-1);
 }
 .portfolio-item img{ width:100%; height:220px; object-fit:cover; display:block; }
+a.portfolio-item{ text-decoration:none; color:inherit; }
 
-/* =============== LIGHTBOX =============== */
-.lightbox{
-  position: fixed; inset: 0; z-index: 1000;
-  background: rgba(0,0,0,.92);
-  display: none; align-items: center; justify-content: center;
-  padding: 2rem;
+/* =============== REGULAR PROJECT CARDS (3-col grid) =============== */
+.projects-grid{
+  display:grid; gap:1rem; grid-template-columns: repeat(3, 1fr);
+  max-width: 1100px; margin: 0 auto; padding: 0 1rem;
 }
-.lightbox.open{ display: flex; }
-.lightbox img{
-  max-width: 92vw; max-height: 90vh;
-  border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,.6);
+.project-card{
+  background:#fff; border:1px solid #eee; border-radius:.75rem;
+  overflow:hidden; box-shadow: 0 4px 14px rgba(0,0,0,.06);
+}
+.project-card img{ width:100%; height:180px; object-fit:cover; }
+.project-card h3{ padding:.9rem 1rem; }
+
+/* Generic content wrapper */
+.content{ max-width: 800px; margin: 0 auto; padding: 0 1rem; }
+.content p{ color:#444; margin-top:.5rem; }
+
+/* =============== VISUALIZERS (800x800 horizontal scroller) =============== */
+.visualizer-gallery { padding: 2rem 0; }
+.visualizer-strip{
+  display:flex; gap:1rem; overflow-x:auto; padding:0 1rem 1rem;
+  scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
+}
+.visualizer-item{ flex:0 0 auto; width:800px; scroll-snap-align:start; }
+.visualizer-frame{
+  width:800px; height:800px; background:#000; border-radius:.75rem; overflow:hidden;
+  border:5px solid var(--primary); box-shadow: var(--shadow-1);
+  display:grid; place-items:center;
+}
+.visualizer-frame img{ width:100%; height:100%; object-fit:cover; }
+.visualizer-item h3{ text-align:center; padding:.6rem 0 .2rem; color:#222; }
+
+/* Responsive size for the visualizers */
+@media (max-width: 840px){
+  .visualizer-item, .visualizer-frame{ width:min(800px, 90vw); height:min(800px, 90vw); }
 }
 
-/* Lightbox controls */
-.lb-btn{
-  position: absolute; top: 50%; transform: translateY(-50%);
-  background: rgba(255,255,255,.12); color:#fff; border: none;
-  width: 44px; height: 44px; border-radius: 50%;
-  display: grid; place-items: center; cursor: pointer;
-  font-size: 28px; line-height: 1; transition: .15s;
-}
-.lb-btn:hover{ background: rgba(255,255,255,.22); }
-.lb-prev{ left: 16px; }
-.lb-next{ right: 16px; }
-.lb-close{
-  top: 16px; right: 16px; transform: none; font-size: 30px;
-  width: 40px; height: 40px; border-radius: 10px; background: rgba(0,0,0,.4);
+/* =============== FOOTER =============== */
+footer{
+  border-top:1px solid #eaeaea; padding:1rem; text-align:center; color:#666; background:#fff;
 }
 
 /* =============== RESPONSIVE NAV / LAYOUT =============== */
 @media (max-width: 1100px){ .portfolio-grid{ grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 780px){
   .portfolio-grid{ grid-template-columns: repeat(2, 1fr); }
+  .projects-grid{ grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 680px){
+  /* mobile nav */
   .hamburger{ display:flex; margin-left:auto; }
   .nav-links{
     position:absolute; right:0; left:0; top:60px;
@@ -171,9 +232,11 @@ h1, h2, h3, .section-title { font-family:'DRUK', sans-serif; }
   }
   .nav-links.show{ display:flex; }
   .nav-links li{ text-align:center; }
+  .projects-grid{ grid-template-columns: 1fr; }
 }
 @media (max-width: 520px){ .portfolio-grid{ grid-template-columns: 1fr; } }
 
-/* Utilities */
+/* Small utilities */
 .center { text-align:center; }
 .mt-1 { margin-top:.5rem; } .mt-2 { margin-top:1rem; } .mt-3 { margin-top:1.5rem; }
+

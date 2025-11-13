@@ -3,18 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Digital Covers | GUVGFX</title>
+  <title>Covers & Flyers | GUVGFX</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon/favicon-32x32.png" type="image/png" />
 </head>
 <body>
+
+  <!-- ===== HEADER ===== -->
   <header>
     <nav class="navbar">
       <h1 class="logo">
         <a href="index.html">
-          <img src="Pictures/GUV marker.png" alt="Logo">
+          <img src="Pictures/GUV marker.png" alt="GUV Logo">
         </a>
       </h1>
-      <ul class="nav-links">
+
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="projects.html" class="active">Projects</a></li>
@@ -23,23 +31,138 @@
     </nav>
   </header>
 
-  <section class="content">
-    <h2>Digital Cover Art</h2>
-    <p>Album/single covers and promotional graphics.</p>
-  </section>
+  <!-- ===== MAIN ===== -->
+  <main class="main-wrap">
 
-  <section class="projects-grid">
-    <div class="project-card">
-      <img src="Pictures/COVER ART 1.png" alt="Cover 1"><h3>Cover 1</h3>
-    </div>
-    <div class="project-card">
-      <img src="Pictures/COVER ART 2.png" alt="Cover 2"><h3>Cover 2</h3>
-    </div>
-    <div class="project-card">
-      <img src="Pictures/COVER ART 3.png" alt="Cover 3"><h3>Cover 3</h3>
-    </div>
-  </section>
+    <!-- Covers -->
+    <section class="container">
+      <h2 class="section-title">Digital Cover Art</h2>
+      <p class="center mt-1" style="max-width:800px;margin-inline:auto;color:#444;">
+        Album & single covers. Click any tile to view larger.
+      </p>
+    </section>
 
-  <footer><p>© 2025 GUVGFX | Designed by Guvnor Nnanna</p></footer>
+    <section>
+      <!-- use your existing neon grid -->
+      <div class="portfolio-grid">
+        <a class="portfolio-item lightbox-trigger" href="#!" data-full="Pictures/COVER ART 1.png">
+          <img src="Pictures/COVER ART 1.png" alt="Cover 1">
+        </a>
+        <a class="portfolio-item lightbox-trigger" href="#!" data-full="Pictures/COVER ART 2.png">
+          <img src="Pictures/COVER ART 2.png" alt="Cover 2">
+        </a>
+        <a class="portfolio-item lightbox-trigger" href="#!" data-full="Pictures/COVER ART 3.png">
+          <img src="Pictures/COVER ART 3.png" alt="Cover 3">
+        </a>
+        <a class="portfolio-item lightbox-trigger" href="#!" data-full="Pictures/COVER ART 4.png">
+          <img src="Pictures/COVER ART 4.png" alt="Cover 4">
+        </a>
+        <a class="portfolio-item lightbox-trigger" href="#!" data-full="Pictures/COVER ART 5.png">
+          <img src="Pictures/COVER ART 5.png" alt="Cover 5">
+        </a>
+        <a class="portfolio-item lightbox-trigger" href="#!" data-full="Pictures/COVER ART 6.png">
+          <img src="Pictures/COVER ART 6.png" alt="Cover 6">
+        </a>
+        <a class="portfolio-item lightbox-trigger" href="#!" data-full="Pictures/COVER ART 7.png">
+          <img src="Pictures/COVER ART 7.png" alt="Cover 7">
+        </a>
+        <a class="portfolio-item lightbox-trigger" href="#!" data-full="Pictures/COVER ART 8.png">
+          <img src="Pictures/COVER ART 8.png" alt="Cover 8">
+        </a>
+        <a class="portfolio-item lightbox-trigger" href="#!" data-full="Pictures/COVER ART 9.png">
+          <img src="Pictures/COVER ART 9.png" alt="Cover 9">
+        </a>
+        <a class="portfolio-item lightbox-trigger" href="#!" data-full="Pictures/COVER ART 10.png">
+          <img src="Pictures/COVER ART 10.png" alt="Cover 10">
+        </a>
+      </div>
+    </section>
+
+    <!-- Flyers -->
+    <section class="container">
+      <h2 class="section-title">Promotional Flyers</h2>
+      <p class="center mt-1" style="max-width:800px;margin-inline:auto;color:#444;">
+        A set of 10 flyers (2 rows × 5). Click a flyer to view larger.
+      </p>
+    </section>
+
+    <section>
+      <!-- 5-across flyer grid (uses the .flyer-grid you added) -->
+      <div class="flyer-grid">
+        <a class="flyer-item lightbox-trigger" href="#!" data-full="Pictures/FLYER ART 1.png">
+          <img src="Pictures/FLYER ART 1.png" alt="Flyer 1">
+        </a>
+        <a class="flyer-item lightbox-trigger" href="#!" data-full="Pictures/FLYER ART 2.png">
+          <img src="Pictures/FLYER ART 2.png" alt="Flyer 2">
+        </a>
+        <a class="flyer-item lightbox-trigger" href="#!" data-full="Pictures/FLYER ART 3.png">
+          <img src="Pictures/FLYER ART 3.png" alt="Flyer 3">
+        </a>
+        <a class="flyer-item lightbox-trigger" href="#!" data-full="Pictures/FLYER ART 4.png">
+          <img src="Pictures/FLYER ART 4.png" alt="Flyer 4">
+        </a>
+      <p class="center mt-2">
+        <a class="btn-lg" href="contact.html">Book a Project</a>
+      </p>
+    </section>
+  </main>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lb-btn lb-close" id="lb-close" aria-label="Close (Esc)">×</button>
+    <button class="lb-btn lb-prev" id="lb-prev" aria-label="Previous (←)">‹</button>
+    <img id="lb-img" alt="Expanded item">
+    <button class="lb-btn lb-next" id="lb-next" aria-label="Next (→)">›</button>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2025 GUVGFX | Designed by Guvnor Nnanna</p>
+  </footer>
+
+  <!-- ===== JS: Hamburger + Lightbox ===== -->
+  <script>
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('nav-links');
+    hamburger?.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      hamburger.classList.toggle('open');
+    });
+
+    // Lightbox
+    const triggers = Array.from(document.querySelectorAll('.lightbox-trigger'));
+    const lightbox = document.getElementById('lightbox');
+    const imgEl    = document.getElementById('lb-img');
+    const btnClose = document.getElementById('lb-close');
+    const btnPrev  = document.getElementById('lb-prev');
+    const btnNext  = document.getElementById('lb-next');
+
+    let idx = 0;
+    function openAt(i){
+      idx = i;
+      const t = triggers[idx];
+      const full = t.dataset.full || t.querySelector('img').src;
+      imgEl.src = full;
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden','false');
+    }
+    function closeBox(){ lightbox.classList.remove('open'); lightbox.setAttribute('aria-hidden','true'); imgEl.removeAttribute('src'); }
+    function prev(){ openAt((idx - 1 + triggers.length) % triggers.length); }
+    function next(){ openAt((idx + 1) % triggers.length); }
+
+    triggers.forEach((t,i)=> t.addEventListener('click', e => { e.preventDefault(); openAt(i); }));
+    btnClose.addEventListener('click', closeBox);
+    btnPrev .addEventListener('click', prev);
+    btnNext .addEventListener('click', next);
+
+    lightbox.addEventListener('click', e => { if(e.target === lightbox) closeBox(); });
+    window.addEventListener('keydown', e=>{
+      if(!lightbox.classList.contains('open')) return;
+      if(e.key === 'Escape') closeBox();
+      if(e.key === 'ArrowLeft') prev();
+      if(e.key === 'ArrowRight') next();
+    });
+  </script>
 </body>
 </html>

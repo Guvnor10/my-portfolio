@@ -105,14 +105,14 @@ h1, h2, h3, .section-title {
 /* Optional neon rails framing main content */
 .main-wrap{ border-left:6px solid var(--primary); border-right:6px solid var(--primary); }
 
-/* ===== Auto-Scrolling Slideshow for Recent Work ===== */
+/* ===== Auto-Scrolling Back & Forth Slideshow ===== */
 .work-strip {
   display: flex;
   gap: 1.25rem;
   overflow: hidden;
   padding: 0.5rem 1rem 1.25rem;
   scroll-snap-type: x mandatory;
-  animation: scrollWork 40s linear infinite;
+  animation: scrollBounce 40s linear infinite alternate;
 }
 
 .work-strip:hover {
@@ -153,10 +153,42 @@ h1, h2, h3, .section-title {
   -ms-overflow-style: none;
 }
 
-/* Continuous horizontal animation */
-@keyframes scrollWork {
+/* Smooth back-and-forth animation */
+@keyframes scrollBounce {
   0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* Moves halfway through the duplicated strip */
+  50%  { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 1024px) {
+  .work-card {
+    width: 280px;
+    height: 280px;
+  }
+  .work-strip {
+    animation-duration: 30s;
+  }
+}
+
+@media (max-width: 768px) {
+  .work-card {
+    width: 220px;
+    height: 220px;
+  }
+  .work-strip {
+    animation-duration: 25s;
+  }
+}
+
+@media (max-width: 480px) {
+  .work-card {
+    width: 180px;
+    height: 180px;
+  }
+  .work-strip {
+    animation-duration: 22s;
+  }
 }
 
 /* =============== IMAGE MODAL (For Recent Work) =============== */

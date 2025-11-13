@@ -266,6 +266,53 @@ a.portfolio-item{ text-decoration:none; color:inherit; }
 @media (max-width: 680px) { .flyer-grid{ grid-template-columns: repeat(2, 1fr);} }
 @media (max-width: 420px) { .flyer-grid{ grid-template-columns: 1fr; } }
 
+/* ===== Lightbox overlay (for covers & flyers) ===== */
+.lightbox{
+  position: fixed;
+  inset: 0;
+  display: none;                     /* hidden by default */
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.85);      /* dark overlay */
+  z-index: 1000;
+}
+
+/* when JS adds .open, the overlay appears */
+.lightbox.open{
+  display: flex;
+}
+
+.lightbox img{
+  max-width: 92vw;                   /* fit within screen width */
+  max-height: 90vh;                  /* fit within screen height */
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.6);
+}
+
+/* lightbox buttons */
+.lb-btn{
+  position: absolute;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.lb-close{
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+.lb-prev,
+.lb-next{
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lb-prev{ left: 1.5rem; }
+.lb-next{ right: 1.5rem; }
+
 /* =============== FOOTER =============== */
 footer{
   border-top:1px solid #eaeaea; padding:1rem; text-align:center; color:#666; background:#fff;

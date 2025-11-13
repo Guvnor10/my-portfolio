@@ -318,6 +318,31 @@ footer{
   border-top:1px solid #eaeaea; padding:1rem; text-align:center; color:#666; background:#fff;
 }
 
+/* === Social Links (Footer Icons) === */
+.social-links{
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.social-links a{
+  color: #111;              /* matches your footer */
+  text-decoration: none;
+  transition: .25s ease;
+}
+
+.social-links a:hover{
+  color: var(--primary);    /* neon green glow on hover */
+}
+
+.social-links .icon{
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  display: block;
+}
+
 /* =============== RESPONSIVE NAV / LAYOUT =============== */
 @media (max-width: 1100px){ .portfolio-grid{ grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 780px){
